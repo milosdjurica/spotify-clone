@@ -1,4 +1,5 @@
-"uses client";
+"use client";
+
 import { useState } from "react";
 import { Database } from "../../types_db";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
@@ -11,8 +12,14 @@ type SupabaseProviderProps = {
 const SupabaseProvider: React.FC<SupabaseProviderProps> = ({
   children,
 }: SupabaseProviderProps) => {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+  const supabaseKey = process.env.NEXT_PUBLIC_ANON_KEY ?? "";
+
   const [supabaseClient] = useState(() =>
-    createClientComponentClient<Database>()
+    createClientComponentClient<Database>({
+      supabaseKey,
+      supabaseUrl,
+    })
   );
 
   return (
