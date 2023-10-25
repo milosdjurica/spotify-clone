@@ -1,5 +1,6 @@
 import getSongsByTitle from "@/actions/getSongsByTitle";
 import Header from "@/components/Header";
+import SearchContent from "@/components/SearchContent";
 import SearchInput from "@/components/SearchInput";
 import React from "react";
 
@@ -20,6 +21,7 @@ export default async function Search({ searchParams }: SearchProps) {
           <SearchInput />
         </div>
       </Header>
+      <SearchContent songs={songs} />
     </div>
   );
 }
