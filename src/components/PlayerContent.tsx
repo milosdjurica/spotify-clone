@@ -7,6 +7,7 @@ import LikeButton from "./LikeButton";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
+import Slider from "./Slider";
 
 type PlayerContentProps = {
   song: Song;
@@ -63,7 +64,7 @@ export default function PlayerContent({ song, songUrl }: PlayerContentProps) {
       <div className="hidden md:flex w-full justify-end pr-2">
         <div className="flex items-center gap-x-2 w-[120px]">
           <VolumeIcon onClick={() => {}} className="cursor-pointer" size={34} />
-          {/* <Slider /> */}
+          <Slider />
         </div>
       </div>
     </div>
