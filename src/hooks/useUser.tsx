@@ -5,8 +5,6 @@ import {
 } from "@supabase/auth-helpers-react";
 import { Subscription, UserDetails } from "../../types";
 import { createContext, useContext, useEffect, useState } from "react";
-import { Six_Caps } from "next/font/google";
-import { isNullOrUndefined } from "util";
 
 type UserContextType = {
   accessToken: string | null;
